@@ -1,5 +1,2 @@
 ﻿  load.c
-C:\Users\RyuJW\Documents\JK\Codes\Qubo\Qubo\load.c(24,22): warning C4047: '==': 'int'의 간접 참조 수준이 'void *'과(와) 다릅니다.
-  qubo.c
-  코드를 생성하고 있습니다...
   Qubo.vcxproj -> C:\Users\RyuJW\Documents\JK\Codes\Qubo\x64\Debug\Qubo.exe

@@ -10,6 +10,7 @@
 void loadFile() {
 	printf("파일을 불러오는 중입니다...\n\n");
 
+	qubo.type = None;
 	qubo.subjectNumber = 0;
 
 	FILE* file;
@@ -21,7 +22,7 @@ void loadFile() {
 
 	char line[256];
 	while (fgets(line, sizeof(line), file)) {
-		if (qubo.condition == NULL) {
+		if (qubo.type == None) {
 
 			if (line[0] == '[') getSubject(line);
 			if (line[0] == '#') getChapter(line);
@@ -31,23 +32,22 @@ void loadFile() {
 					//getQM(line);
 					break;
 				case 's':
+					qubo.condition.Qs = 0;
 					getQS(line);
 					break;
 				case 'n':
-					//getQN(line);
+					getQN(line);
 					break;
 				}
 			} 
 
 		}
 		else {
-			switch (qubo.condition) {
-			case QM:
+			switch (qubo.type) {
+			case Qm:
 				break;
-			case QS:
+			case Qs:
 				getQS(line);
-				break;
-			case QN:
 				break;
 			}
 		}
@@ -116,16 +116,18 @@ void getChapter(char line[]) {
 	CHAPTER* currentChapter = &currentSubject->chapter[currentSubject->chapterNumber - 1];
 	currentChapter->questionNumber = 0;
 	currentChapter->question = NULL;
-	printf("%s", currentSubject->chapter[currentSubject->chapterNumber-1].chapterName);
+	printf("    # %s", currentSubject->chapter[currentSubject->chapterNumber-1].chapterName);
 }
 
 void getQS(char line[]) {
-	static int condition = 0;
-	if (condition == 0) getQSQuestion(line);
-	
+	if (qubo.condition.Qs == 0) getQSQuestion(line);
+	else if (qubo.condition.Qs == 1) getQSAnswer(line);
 }
 
 void getQSQuestion(char line[]) {
+	qubo.type = Qs;
+	qubo.condition.Qs++;
+
 	for (int ii = 0; ii < 2; ii++) {
 		for (int i = 0; line[i] != '\0'; i++) {
 			line[i] = line[i + 1];
@@ -148,6 +150,44 @@ void getQSQuestion(char line[]) {
 		sizeof(currentChapter->question[currentChapter->questionNumber - 1].qs.question),
 		line
 	);
+}
 
-	printf("%s", currentChapter->question[currentChapter->questionNumber - 1].qs.question);
+void getQSAnswer(char line[]) {
+	qubo.condition.Qs = 0;
+	qubo.type = None;
+
+	strTrim(line);
+
+	SUBJECT* currentSubject = &qubo.subject[qubo.subjectNumber - 1];
+	CHAPTER* currentChapter = &currentSubject->chapter[currentSubject->chapterNumber - 1];
+	strcpy_s(currentChapter->question[currentChapter->questionNumber - 1].qs.answer,
+		sizeof(currentChapter->question[currentChapter->questionNumber - 1].qs.answer),
+		line
+	);
+	printf("답 :  %s", currentChapter->question[currentChapter->questionNumber - 1].qs.answer);
+}
+
+void getQN(char line[]) {
+	for (int ii = 0; ii < 2; ii++) {
+		for (int i = 0; line[i] != '\0'; i++) {
+			line[i] = line[i + 1];
+		}
+	}
+	strTrim(line);
+
+	SUBJECT* currentSubject = &qubo.subject[qubo.subjectNumber - 1];
+	CHAPTER* currentChapter = &currentSubject->chapter[currentSubject->chapterNumber - 1];
+
+	currentChapter->questionNumber++;
+	QUESTION* tmp = realloc(currentChapter->question, currentChapter->questionNumber * sizeof(QUESTION));
+	if (tmp != NULL) currentChapter->question = tmp;
+	else {
+		printf("<문제> 메모리 할당 실패>");
+		exit(1);
+	}
+
+	strcpy_s(currentChapter->question[currentChapter->questionNumber - 1].qn.content,
+		sizeof(currentChapter->question[currentChapter->questionNumber - 1].qn.content),
+		line
+	);
 }

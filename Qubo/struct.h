@@ -36,16 +36,15 @@ typedef struct {
 } SUBJECT;
 
 typedef enum {
+	None,
 	Qm,
-	Qs,
-	Qn
+	Qs
 } TYPE;
 
-typedef enum {
-	QM,
-	QS,
-	QN
-} CONDITION;
+typedef struct {
+	int Qm;
+	int Qs;
+}CONDITION;
 
 typedef struct {
 	SUBJECT* subject;
