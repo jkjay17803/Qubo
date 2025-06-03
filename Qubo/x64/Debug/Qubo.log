@@ -1,0 +1,64 @@
+﻿  load.c
+  qubo.c
+C:\Users\RyuJW\Documents\JK\Codes\Qubo\Qubo\struct.h(45,2): error C2365: 'Qm': 재정의: 이전 정의는 '열거자'입니다.
+  (소스 파일 'load.c'을(를) 컴파일하는 중)
+      C:\Users\RyuJW\Documents\JK\Codes\Qubo\Qubo\struct.h(39,2):
+      'Qm' 선언을 참조하십시오.
+  
+C:\Users\RyuJW\Documents\JK\Codes\Qubo\Qubo\struct.h(45,2): error C2086: 'Qm': 재정의
+  (소스 파일 'load.c'을(를) 컴파일하는 중)
+      C:\Users\RyuJW\Documents\JK\Codes\Qubo\Qubo\struct.h(45,2):
+      'Qm' 선언을 참조하십시오.
+  
+C:\Users\RyuJW\Documents\JK\Codes\Qubo\Qubo\struct.h(46,2): error C2365: 'Qs': 재정의: 이전 정의는 '열거자'입니다.
+  (소스 파일 'load.c'을(를) 컴파일하는 중)
+      C:\Users\RyuJW\Documents\JK\Codes\Qubo\Qubo\struct.h(40,2):
+      'Qs' 선언을 참조하십시오.
+  
+C:\Users\RyuJW\Documents\JK\Codes\Qubo\Qubo\struct.h(46,2): error C2086: '<unnamed-enum-Qm> Qs': 재정의
+  (소스 파일 'load.c'을(를) 컴파일하는 중)
+      C:\Users\RyuJW\Documents\JK\Codes\Qubo\Qubo\struct.h(46,2):
+      'Qs' 선언을 참조하십시오.
+  
+C:\Users\RyuJW\Documents\JK\Codes\Qubo\Qubo\struct.h(47,2): error C2365: 'Qn': 재정의: 이전 정의는 '열거자'입니다.
+  (소스 파일 'load.c'을(를) 컴파일하는 중)
+      C:\Users\RyuJW\Documents\JK\Codes\Qubo\Qubo\struct.h(41,2):
+      'Qn' 선언을 참조하십시오.
+  
+C:\Users\RyuJW\Documents\JK\Codes\Qubo\Qubo\struct.h(47,2): error C2086: '<unnamed-enum-Qm> Qn': 재정의
+  (소스 파일 'load.c'을(를) 컴파일하는 중)
+      C:\Users\RyuJW\Documents\JK\Codes\Qubo\Qubo\struct.h(47,2):
+      'Qn' 선언을 참조하십시오.
+  
+C:\Users\RyuJW\Documents\JK\Codes\Qubo\Qubo\load.c(24,22): warning C4047: '==': 'int'의 간접 참조 수준이 'void *'과(와) 다릅니다.
+C:\Users\RyuJW\Documents\JK\Codes\Qubo\Qubo\struct.h(45,2): error C2365: 'Qm': 재정의: 이전 정의는 '열거자'입니다.
+  (소스 파일 'qubo.c'을(를) 컴파일하는 중)
+      C:\Users\RyuJW\Documents\JK\Codes\Qubo\Qubo\struct.h(39,2):
+      'Qm' 선언을 참조하십시오.
+  
+C:\Users\RyuJW\Documents\JK\Codes\Qubo\Qubo\struct.h(45,2): error C2086: 'Qm': 재정의
+  (소스 파일 'qubo.c'을(를) 컴파일하는 중)
+      C:\Users\RyuJW\Documents\JK\Codes\Qubo\Qubo\struct.h(45,2):
+      'Qm' 선언을 참조하십시오.
+  
+C:\Users\RyuJW\Documents\JK\Codes\Qubo\Qubo\struct.h(46,2): error C2365: 'Qs': 재정의: 이전 정의는 '열거자'입니다.
+  (소스 파일 'qubo.c'을(를) 컴파일하는 중)
+      C:\Users\RyuJW\Documents\JK\Codes\Qubo\Qubo\struct.h(40,2):
+      'Qs' 선언을 참조하십시오.
+  
+C:\Users\RyuJW\Documents\JK\Codes\Qubo\Qubo\struct.h(46,2): error C2086: '<unnamed-enum-Qm> Qs': 재정의
+  (소스 파일 'qubo.c'을(를) 컴파일하는 중)
+      C:\Users\RyuJW\Documents\JK\Codes\Qubo\Qubo\struct.h(46,2):
+      'Qs' 선언을 참조하십시오.
+  
+C:\Users\RyuJW\Documents\JK\Codes\Qubo\Qubo\struct.h(47,2): error C2365: 'Qn': 재정의: 이전 정의는 '열거자'입니다.
+  (소스 파일 'qubo.c'을(를) 컴파일하는 중)
+      C:\Users\RyuJW\Documents\JK\Codes\Qubo\Qubo\struct.h(41,2):
+      'Qn' 선언을 참조하십시오.
+  
+C:\Users\RyuJW\Documents\JK\Codes\Qubo\Qubo\struct.h(47,2): error C2086: '<unnamed-enum-Qm> Qn': 재정의
+  (소스 파일 'qubo.c'을(를) 컴파일하는 중)
+      C:\Users\RyuJW\Documents\JK\Codes\Qubo\Qubo\struct.h(47,2):
+      'Qn' 선언을 참조하십시오.
+  
+  코드를 생성하고 있습니다...
