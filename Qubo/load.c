@@ -300,5 +300,4 @@ void getQN(char line[]) {
 //}
 
 
-
 //getQS QM 예외처리
