@@ -3,18 +3,18 @@
 #define MAX_SIZE_OF_STR 256
 
 typedef struct {
-	char* question;
+	char question[MAX_SIZE_OF_STR];
 	char** choices;
 	int answer;
 } MULTIPLE;
 
 typedef struct {
-	char* question;
-	char* answer;
+	char question[MAX_SIZE_OF_STR];
+	char answer[MAX_SIZE_OF_STR];
 } SHORT;
 
 typedef struct {
-	char* content;
+	char content[MAX_SIZE_OF_STR];
 } NOTE;
 
 typedef struct {
@@ -42,9 +42,9 @@ typedef enum {
 } TYPE;
 
 typedef enum {
-	Qm,
-	Qs,
-	Qn
+	QM,
+	QS,
+	QN
 } CONDITION;
 
 typedef struct {

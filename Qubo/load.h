@@ -8,3 +8,5 @@ void getQS(char line[]);
 //void getQN(char line[]);
 
 void strTrim(char line[]);
+
+void getQSQuestion(char line[]);
