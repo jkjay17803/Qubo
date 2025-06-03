@@ -5,6 +5,7 @@
 typedef struct {
 	char question[MAX_SIZE_OF_STR];
 	char** choices;
+	int choiceNumber;
 	int answer;
 } MULTIPLE;
 
