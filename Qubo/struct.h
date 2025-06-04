@@ -43,6 +43,7 @@ typedef enum {
 } TYPE;
 
 typedef struct {
+	int main;
 	int Qm;
 	int Qs;
 }CONDITION;

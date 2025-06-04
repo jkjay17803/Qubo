@@ -10,6 +10,6 @@
 
 int main(void) {
 	loadFile();
-
+	showQuestionNumber();
 	return 0;
 }

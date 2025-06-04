@@ -24,9 +24,12 @@ void loadFile() {
 	while (fgets(line, sizeof(line), file)) {
 		if (qubo.type == None) {
 
-			if (line[0] == '[') { 
-				getSubject(line); }
+			if (line[0] == '[') {
+				showQuestionNumber();
+				getSubject(line); 
+			}
 			else if (line[0] == '#') {
+				showQuestionNumber();
 				getChapter(line);
 			}
 			else if (line[0] == 'q') {
@@ -124,7 +127,7 @@ void getChapter(char line[]) {
 	
 	currentChapter->questionNumber = 0;
 	currentChapter->question = NULL;
-	printf("    # %s", currentSubject->chapter[currentSubject->chapterNumber-1].chapterName);
+	printf("  # %s", currentSubject->chapter[currentSubject->chapterNumber-1].chapterName);
 }
 
 
@@ -173,6 +176,7 @@ void getQSAnswer(char line[]) {
 		sizeof(currentChapter->question[currentChapter->questionNumber - 1].qs.answer),
 		line
 	);
+	qubo.condition.main = 1;
 }
 
 
@@ -258,6 +262,7 @@ void getQMAnswer(char line[]) {
 	QUESTION* currentQuestion = &currentChapter->question[currentChapter->questionNumber - 1];
 
 	currentQuestion->qm.answer = tmp;
+	qubo.condition.main = 1;
 }
 
 
@@ -284,20 +289,20 @@ void getQN(char line[]) {
 		sizeof(currentChapter->question[currentChapter->questionNumber - 1].qn.content),
 		line
 	);
+	qubo.condition.main = 1;
 }
 
-//void showQuestionNumber() {
-//	static int condition = 0;
-//	if (condition == 0) {
-//		condition++;
-//		return;
-//	}
-//	SUBJECT* currentSubject = &qubo.subject[qubo.subjectNumber - 1];
-//	CHAPTER* currentChapter = &currentSubject->chapter[currentSubject->chapterNumber - 1];
-//	if(currentChapter->questionNumber > 0) 
-//		printf("%d\n", currentChapter->questionNumber);
-//	condition = 0;
-//}
+void showQuestionNumber() {
+	if (qubo.condition.main == 0) {
+		return;
+	}
+	SUBJECT* currentSubject = &qubo.subject[qubo.subjectNumber - 1];
+	CHAPTER* currentChapter = &currentSubject->chapter[currentSubject->chapterNumber - 1];
+	
+	printf("    -  %d문제 불러와짐.\n", currentChapter->questionNumber);
+	
+	qubo.condition.main = 0;
+}
 
 
 //getQS QM 예외처리
