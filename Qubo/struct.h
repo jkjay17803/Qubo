@@ -40,7 +40,7 @@ typedef enum {
 	None,
 	Qm,
 	Qs
-} TYPE;
+} LOADTYPE;
 
 typedef struct {
 	int main;
@@ -49,12 +49,23 @@ typedef struct {
 }CONDITION;
 
 typedef struct {
+	int subject;
+	int chapter;
+	int qs;
+	int qm;
+	int qn;
+	int question;
+} SELECT;
+
+typedef struct {
 	SUBJECT* subject;
 	int subjectNumber;
 
+	SELECT select;
+
 	CONDITION condition;
 
-	TYPE type;
+	LOADTYPE type;
 	union {
 		int chapterNumber;
 		char text[256]; // type == Qs

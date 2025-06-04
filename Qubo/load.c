@@ -74,6 +74,9 @@ void strTrim(char line[]) {
 		line[len] = line[len + 1];
 		len = (int)strlen(line)-1;
 	}
+
+	len = (int)strlen(line);
+	line[len] = '\0';
 }
 
 
@@ -100,7 +103,7 @@ void getSubject(char line[]) {
 	strcpy_s(currentSubject->subjectName, sizeof(currentSubject->subjectName), line);
 	currentSubject->chapterNumber = 0;
 	currentSubject->chapter = NULL;
-	printf("- [ %s ]\n", currentSubject->subjectName);
+	printf("- [ %s ]\n\n", currentSubject->subjectName);
 }
 
 void getChapter(char line[]) {

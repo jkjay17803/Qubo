@@ -24,6 +24,9 @@
     <ClCompile Include="menu.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="solve.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="struct.h">
@@ -33,6 +36,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="menu.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="solve.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

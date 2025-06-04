@@ -14,15 +14,16 @@ int main(void) {
 	restart:
 	printf("\n프로그램을 실행합니까? (y/n)\n:");
 	char yn;
-	scanf_s("%c", &yn,(unsigned int)sizeof(yn));
+	yn = getchar();
 	if (yn == 'n' || yn == 'N') {
 		printf("프로그램을 종료합니다.");
 		return 0;
 	}
 	else if (yn == 'Y' || yn == 'y') {
-		menu_main();
+		while(1) menu_main();
 	}
 	else {
+		system("cls");
 		goto restart;
 	}
 
