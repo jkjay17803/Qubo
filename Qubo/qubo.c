@@ -6,7 +6,7 @@
 #include "struct.h"
 #include "load.h"
 
-#define MAX_SIZE_OF_STR 256
+#define MAX_SIZE_OF_STR 500
 
 int main(void) {
 	loadFile();

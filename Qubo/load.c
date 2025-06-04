@@ -237,14 +237,14 @@ void getQMChoice(char line[]) {
 		exit(1);
 	}
 
-	currentQuestion->qm.choices[currentQuestion->qm.choiceNumber - 1] = malloc(MAX_SIZE_OF_STR * sizeof(char));
+	currentQuestion->qm.choices[currentQuestion->qm.choiceNumber - 1] = (char*)malloc(MAX_SIZE_OF_STR * sizeof(char));
 	if (currentQuestion->qm.choices[currentQuestion->qm.choiceNumber - 1] == NULL) {
 		printf("<문제-선택지-문자열> 메모리 할당 실패");
 		exit(1);
 	}
 
 	strcpy_s(currentQuestion->qm.choices[currentQuestion->qm.choiceNumber-1],
-		sizeof(currentQuestion->qm.choices[currentQuestion->qm.choiceNumber - 1]),
+		MAX_SIZE_OF_STR,
 		line
 	);
 }
@@ -299,7 +299,7 @@ void showQuestionNumber() {
 	SUBJECT* currentSubject = &qubo.subject[qubo.subjectNumber - 1];
 	CHAPTER* currentChapter = &currentSubject->chapter[currentSubject->chapterNumber - 1];
 	
-	printf("    -  %d문제 불러와짐.\n", currentChapter->questionNumber);
+	printf("    - %d문제 불러옴\n", currentChapter->questionNumber);
 	
 	qubo.condition.main = 0;
 }
