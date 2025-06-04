@@ -128,10 +128,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="load.c" />
+    <ClCompile Include="menu.c" />
     <ClCompile Include="qubo.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="load.h" />
+    <ClInclude Include="menu.h" />
     <ClInclude Include="struct.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

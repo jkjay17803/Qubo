@@ -235,6 +235,7 @@ void getQMChoice(char line[]) {
 	else {
 		printf("<문제-선택지> 메모리 할당 실패");
 		exit(1);
+
 	}
 
 	currentQuestion->qm.choices[currentQuestion->qm.choiceNumber - 1] = (char*)malloc(MAX_SIZE_OF_STR * sizeof(char));
