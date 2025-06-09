@@ -10,7 +10,7 @@
 int main(void) {
 	loadFile();
 	showQuestionNumber();
-
+	
 	restart:
 	printf("\n프로그램을 실행합니까? (y/n)\n:");
 	char yn;

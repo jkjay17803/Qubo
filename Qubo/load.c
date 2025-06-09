@@ -220,6 +220,7 @@ void getQMQuestion(char line[]) {
 	);
 	currentChapter->question[currentChapter->questionNumber - 1].qm.choiceNumber = 0;
 	currentChapter->question[currentChapter->questionNumber - 1].qm.choices = NULL;
+	currentChapter->question[currentChapter->questionNumber - 1].isQm = 7;
 }
 
 void getQMChoice(char line[]) {

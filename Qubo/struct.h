@@ -19,6 +19,7 @@ typedef struct {
 } NOTE;
 
 typedef struct {
+	int isQm;
 	MULTIPLE qm;
 	SHORT qs;
 	NOTE qn;

@@ -50,7 +50,7 @@ void solve_remember() {
         QUESTION* q = &chapter->question[index[i]];
 
         // 단답형 문제
-        if (strlen(q->qs.question) > 5) {
+        if (q->isQm != 7) {
             printf("%s\n", q->qs.question);
             char input[256];
             printf("정답 입력: ");
@@ -73,7 +73,7 @@ void solve_remember() {
         }
 
         // 객관식 문제
-        else if (strlen(q->qm.question) > 5) {
+        if (q->isQm == 7) {
             printf("%s\n", q->qm.question);
 
             // 랜덤 순서로 선택지 섞기
@@ -140,8 +140,7 @@ void solve() {
         QUESTION* q = &chapter->question[index[i]];
 
         // 단답형 문제
-        if (strlen(q->qs.question) < 150) {
-            printf("[문제 크기 : %d] 150이 넘으면 객관식으로 분류 됨.\n\n", (int)strlen(q->qs.question));
+        if (q->isQm != 7) {
             printf("%s\n정답 : %s\n", q->qs.question,q->qs.answer);
             char input[256];
             printf("정답 입력: ");
