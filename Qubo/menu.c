@@ -26,10 +26,11 @@ void menu_main() {
 		break;
 	case 1:
 		selectSubject();
-		solve_remember();
+		solve();
 		break;
 	case 2:
-
+		selectSubject();
+		solve_remember();
 		break;
 	default:
 		return;

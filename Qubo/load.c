@@ -111,6 +111,8 @@ void getChapter(char line[]) {
 		line[i] = line[i + 1];
 	}
 	strTrim(line);
+	int len = (int)strlen(line);
+	line[len - 1] = '\0';
 
 	SUBJECT* currentSubject = &qubo.subject[qubo.subjectNumber - 1];
 
@@ -172,6 +174,8 @@ void getQSAnswer(char line[]) {
 	qubo.type = None;
 
 	strTrim(line);
+	int len = (int)strlen(line);
+	line[len - 1] = '\0';
 
 	SUBJECT* currentSubject = &qubo.subject[qubo.subjectNumber - 1];
 	CHAPTER* currentChapter = &currentSubject->chapter[currentSubject->chapterNumber - 1];
@@ -258,14 +262,11 @@ void getQMAnswer(char line[]) {
 	qubo.type = None;
 	strTrim(line);
 
-	if (line[0] >= '1' && line[0] <= '9');
-	int tmp = line[0]-1;
-
 	SUBJECT* currentSubject = &qubo.subject[qubo.subjectNumber - 1];
 	CHAPTER* currentChapter = &currentSubject->chapter[currentSubject->chapterNumber - 1];
 	QUESTION* currentQuestion = &currentChapter->question[currentChapter->questionNumber - 1];
 
-	currentQuestion->qm.answer = tmp;
+	currentQuestion->qm.answer = (line[0] - '0') - 1;
 	qubo.condition.main = 1;
 }
 
