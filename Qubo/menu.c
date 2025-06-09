@@ -8,9 +8,13 @@
 #include "load.h"
 #include "solve.h"
 
+char restartBuffer;
+
 void menu_main() {
+	restart:
 	system("cls");
 
+	char test; // 종료 후 입력 확인용
 	int select;
 	printf("[ 메뉴 ]\n\n");
 	printf("원하는 것을 선택해주세요.\n");
@@ -27,13 +31,18 @@ void menu_main() {
 	case 1:
 		selectSubject();
 		solve();
+		printf("문제 풀이가 끝났습니다!\n아무 문자나 입력해서 돌아가세요.");
+		scanf_s(" %c", &test, (unsigned int)sizeof(test));
 		break;
 	case 2:
 		selectSubject();
 		solve_remember();
+		printf("문제 풀이가 끝났습니다!\n아무 문자나 입력해서 돌아가세요.");
+		scanf_s(" %c", &test, (unsigned int)sizeof(test));
 		break;
 	default:
-		return;
+		restartBuffer = getchar();
+		goto restart;
 	}
 }
 

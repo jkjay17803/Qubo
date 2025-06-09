@@ -304,7 +304,7 @@ void showQuestionNumber() {
 	SUBJECT* currentSubject = &qubo.subject[qubo.subjectNumber - 1];
 	CHAPTER* currentChapter = &currentSubject->chapter[currentSubject->chapterNumber - 1];
 	
-	printf("    - %d문제 불러옴\n", currentChapter->questionNumber);
+	printf("    + %d문제 불러옴\n", currentChapter->questionNumber);
 	
 	qubo.condition.main = 0;
 }

@@ -14,7 +14,7 @@ int main(void) {
 	restart:
 	printf("\n프로그램을 실행합니까? (y/n)\n:");
 	char yn;
-	yn = getchar();
+	scanf_s(" %c", &yn, (unsigned int)sizeof(yn));
 	if (yn == 'n' || yn == 'N') {
 		printf("프로그램을 종료합니다.");
 		return 0;
